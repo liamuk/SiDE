@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Suspend
+Comment=Suspend the system
+Type=Application
+Icon=system-suspend
+Exec=side-suspend
+Categories=Power;
+Terminal=false

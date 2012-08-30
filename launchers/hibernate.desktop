@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Hibernate
+Comment=Hibernate the system
+Type=Application
+Icon=system-hibernate
+Exec=side-hibernate
+Categories=Power;
+Terminal=false

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Logout
+Comment=Logout the current user
+Type=Application
+Icon=application-exit
+Exec=side-logout
+Categories=Power;
+Terminal=false

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ $1 == "-f" ]; then
+    . $2
+    while [ ! -f ~/.side/logout ]; do
+        sleep 1
+    done
+    rm ~/.side/logout
+fi
+
+if [[ ! $1 ]]; then
+    echo "(SiDE): ERROR: No window manager specified"
+    exit
+fi
+
+if [[ -f ~/.${1}initrc ]]; then
+    exec ck-launch-session dbus-launch side-session -f ~/.${1}initrc
+else
+    echo "(SiDE) ERROR: $1 is not a window manager"
+fi

@@ -1,0 +1,44 @@
+#!/bin/sh
+
+. ~/.siderc
+
+side_array_contains(){
+    search="${1}"
+    shift
+    array=("${@}")
+    
+    for i in "${array[@]}"; do
+        if [ "$i" == "$search" ]; then
+            return 0
+        fi
+    done
+    return 1 
+}
+
+side_run_wm(){
+    logfile=/dev/null
+    if [ $SIDE_LOGGING ]; then logfile=~/.xlog; fi
+
+    echo "(SiDE) Starting $1"
+    SIDE_STARTED=1 setsid startx "$1" >& "$logfile"
+    logout
+}
+
+side_prompt_for_wm() {
+    echo "(SiDE) choose your window manager"
+    echo "(SiDE) the following are currently available:"
+    select wm in "${SIDE_ENABLED_WMS[@]}";do break; done;
+   
+    if [ "$wm" = 'tty' ]; then
+        echo "falling back to tty"
+        export SIDE_STARTED=1
+        return
+    else
+        side_run_wm "$wm"
+    fi
+}
+
+side_array_contains `tty` "${SIDE_PREFERRED_TTYS[@]}" &&
+    side_run_wm "$SIDE_PREFERRED_WM"
+[ ! $SIDE_STARTED ] && side_array_contains `tty` "${SIDE_TTYS[@]}" &&
+	side_prompt_for_wm 

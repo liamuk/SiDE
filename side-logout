@@ -1,0 +1,5 @@
+#!/bin/sh
+if [ ! -d ~/.side ]; then
+    mkdir ~/.side
+fi
+touch ~/.side/logout

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Reboot
+Comment=Restart the system
+Type=Application
+Icon=gtk-refresh
+Exec=side-reboot
+Categories=Power;
+Terminal=false

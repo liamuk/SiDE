@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cp launchers/* /usr/share/applications/
+mkdir /usr/share/side
+cp side-* /usr/share/side/
+ln -s /usr/share/side/side-dm /usr/bin/side-dm
+ln -s /usr/share/side/side-halt /usr/bin/side-halt
+ln -s /usr/share/side/side-hibernate /usr/bin/side-hibernate
+ln -s /usr/share/side/side-logout /usr/bin/side-logout
+ln -s /usr/share/side/side-reboot /usr/bin/side-reboot
+ln -s /usr/share/side/side-session /usr/bin/side-session
+ln -s /usr/share/side/side-suspend /usr/bin/side-suspend

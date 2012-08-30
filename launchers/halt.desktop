@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Halt
+Comment=Shutdown the system
+Type=Application
+Icon=gtk-stop
+Exec=side-halt
+Categories=Power;
+Terminal=false
