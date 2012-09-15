@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Lock Screen
-Comment=Lock the screen using slock
-Type=Application
-Icon=system-lock-screen
-Exec=slock
-Categories=Power;
-Terminal=false

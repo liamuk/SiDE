@@ -8,7 +8,7 @@ Dependencies
 ------------
 + ConsoleKit
 + UPower for suspend / hibernate
-+ slock for screen locking
++ i3lock for screen locking
 
 Installation
 ------------

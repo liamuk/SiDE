@@ -3,6 +3,6 @@ Name=Hibernate
 Comment=Hibernate the system
 Type=Application
 Icon=system-hibernate
-Exec=side-hibernate
+Exec=sh -c 'i3lock && side-hibernate'
 Categories=Power;
 Terminal=false
