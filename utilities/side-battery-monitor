@@ -1,0 +1,14 @@
+#!/bin/sh
+while true; do
+    charge_full=$(cat /sys/class/power_supply/BAT0/charge_full)
+    charge_now=$(cat /sys/class/power_supply/BAT0/charge_now)
+    charge_percent=$(expr ${charge_now}00/${charge_full} | bc)
+    if [[ $charge_percent -eq 10 && $notified -eq 0 ]]; then
+        notify-send "Battery Low"  
+        notified=1
+    fi
+    if [[ $charge_percent -gt 10 && $notified -eq 1 ]]; then
+        notified=0
+    fi
+    sleep 1;    
+done

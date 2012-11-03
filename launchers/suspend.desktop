@@ -3,6 +3,6 @@ Name=Suspend
 Comment=Suspend the system
 Type=Application
 Icon=system-suspend
-Exec=sh -c 'i3lock && side-suspend'
+Exec=sh -c 'side-lock && side-suspend'
 Categories=Power;
 Terminal=false

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Lock Screen
+Comment=Lock the screen using i3lock
+Type=Application
+Icon=system-lock-screen
+Exec=i3lock
+Categories=Power;
+Terminal=false
