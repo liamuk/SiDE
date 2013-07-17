@@ -14,7 +14,9 @@ if [[ ! $1 ]]; then
 fi
 
 if [[ -f ~/.${1}initrc ]]; then
-    exec ck-launch-session dbus-launch --exit-with-session side-session -f ~/.${1}initrc
+    exec dbus-launch --exit-with-session side-session -f ~/.${1}initrc
+elif [[ -f /etc/side-session/${1}initrc ]]; then
+    exec dbus-launch --exit-with-session side-session -f /etc/side-session/.${1}initrc
 else
     echo "(SiDE) ERROR: $1 is not a window manager"
 fi
