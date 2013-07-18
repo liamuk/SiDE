@@ -2,10 +2,10 @@
 
 if [ $1 == "-f" ]; then
     . $2
-    while [ ! -f ~/.side/logout ]; do
+    while [ ! -f ~/.side/logout-$XDG_SESSION_ID ]; do
         sleep 1
     done
-    rm ~/.side/logout
+    rm ~/.side/logout-$XDG_SESSION_ID
 fi
 
 if [[ ! $1 ]]; then

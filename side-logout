@@ -2,4 +2,4 @@
 if [ ! -d ~/.side ]; then
     mkdir ~/.side
 fi
-touch ~/.side/logout
+touch ~/.side/logout-$XDG_SESSION_ID
