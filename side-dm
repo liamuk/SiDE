@@ -17,7 +17,7 @@ side_array_contains(){
 
 side_run_wm(){
     logfile=/dev/null
-    if [ $SIDE_LOGGING ]; then logfile=~/.xlog; fi
+    if [ $SIDE_LOGGING ]; then logfile=~/.x11log; fi
 
     echo "(SiDE) Starting $1"
     SIDE_STARTED=1 setsid startx "$1" >& "$logfile"

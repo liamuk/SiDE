@@ -1,11 +1,21 @@
 #!/bin/sh
 
+function finish {
+    rm ~/.side/session-$XDG_SESSION_ID
+}
+
 if [ $1 == "-f" ]; then
-    . $2
-    while [ ! -f ~/.side/logout-$XDG_SESSION_ID ]; do
+    trap finish EXIT
+    
+    . $2 
+    if [ ! -d ~/.side ]; then
+        mkdir ~/.side
+    fi
+    echo $$ > ~/.side/session-$XDG_SESSION_ID
+
+    while true; do
         sleep 1
     done
-    rm ~/.side/logout-$XDG_SESSION_ID
 fi
 
 if [[ ! $1 ]]; then
